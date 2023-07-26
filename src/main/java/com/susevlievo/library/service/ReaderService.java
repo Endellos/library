@@ -1,0 +1,36 @@
+package com.susevlievo.library.service;
+
+import com.susevlievo.library.domain.Reader;
+import com.susevlievo.library.exeptions.ObjectDoesNotExistException;
+import com.susevlievo.library.repository.ReaderRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class ReaderService {
+    ReaderRepository readerRepository;
+
+    public ReaderService(ReaderRepository readerRepository) {
+        this.readerRepository = readerRepository;
+    }
+
+    List<Reader> getAllReaders(){
+        return readerRepository.findAll();
+    }
+
+    Reader getReaderById(long id){
+        if(!readerRepository.findById(id).isPresent()){
+            throw new ObjectDoesNotExistException("Reader with id"+ id + "does not exist");
+        }
+        return readerRepository.findById(id).get();
+    }
+
+    Reader addReader(Reader reader){
+      return readerRepository.save(reader);
+    }
+
+    void deleteReaderById(long id){
+      readerRepository.deleteById(id);
+    }
+}
