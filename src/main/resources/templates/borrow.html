@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Заеми книга</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}">
+    <script defer th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.bundle.min.js}"></script>
+    <script defer src="/js/borrow.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0">Заеми книга</h4>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="bookId" class="form-label">Инвентарен номер</label>
+                            <input type="text" class="form-control" id="bookId" required>
+                            <p id="bookName" style="display: none;"></p>
+                        </div>
+                        <div class="mb-3">
+                            <label for="readerName" class="form-label">Име на читател</label>
+                            <input type="text" class="form-control" id="readerName"  >
+                        </div>
+                        <div class="mb-3">
+                            <label for="dueDate" class="form-label">Краен срок</label>
+                            <input type="date" class="form-control" id="dueDate"   th:value="${oneMonth}" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Заеми</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <!-- Add your table here -->
+            <table class="table" id="readerTable" style="display: none">
+                <thead>
+                <tr>
+                    <th scope="col">Име</th>
+                    <th scope="col">Презиме</th>
+                    <th scope="col">Фамилия</th>
+                    <th scope="col">Клас</th>
+                    <!-- Add more table headers as needed -->
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

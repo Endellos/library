@@ -33,4 +33,8 @@ public class ReaderService {
     void deleteReaderById(long id){
       readerRepository.deleteById(id);
     }
+
+   public List<Reader> findReadersByFullName(String name){
+        return readerRepository.findReadersByFullName(name);
+    }
 }

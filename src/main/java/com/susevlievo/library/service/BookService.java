@@ -19,22 +19,22 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    List<Book> getAllBooks(){
+   public List<Book> getAllBooks(){
       return   bookRepository.findAll();
     }
-    Book getBookById(long id){
+    public Book getBookById(long id){
         if(!bookRepository.findById(id).isPresent()){
             throw new ObjectDoesNotExistException("Book with id"+ id + "does not exist");
         }
         return bookRepository.findById(id).get();
     }
 
-    Book addBook(Book book){
+    public Book addBook(Book book){
         return   bookRepository.save(book);
 
     }
 
-    void deleteBookById(long id){
+    public void deleteBookById(long id){
         bookRepository.deleteById(id);
     }
 
