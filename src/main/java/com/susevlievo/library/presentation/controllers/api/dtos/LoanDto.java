@@ -1,42 +1,25 @@
-package com.susevlievo.library.domain;
+package com.susevlievo.library.presentation.controllers.api.dtos;
 
-
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
+import com.susevlievo.library.domain.Book;
+import com.susevlievo.library.domain.Reader;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 import java.time.LocalDate;
-@Entity
 
 
-public class Loan {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class LoanDto {
     long id;
-
-    @ManyToOne()
-    @JoinColumn(name = "book_id")
     Book book;
-    @ManyToOne
-    @JoinColumn(name = "reader_id")
+
     Reader reader;
     LocalDate loanDate;
     LocalDate dueDate;
     boolean returned;
-
-    public Loan(Book book, Reader reader, LocalDate loanDate, LocalDate dueDate, boolean returned) {
-        this.book = book;
-        this.reader = reader;
-        this.loanDate = loanDate;
-        this.dueDate = dueDate;
-        this.returned = returned;
-    }
-
-    public Loan() {
-
-    }
 
     public long getId() {
         return id;
@@ -83,6 +66,15 @@ public class Loan {
     }
 
     public void setReturned(boolean returned) {
+        this.returned = returned;
+    }
+
+    public LoanDto( Book book, Reader reader, LocalDate loanDate, LocalDate dueDate, boolean returned) {
+
+        this.book = book;
+        this.reader = reader;
+        this.loanDate = loanDate;
+        this.dueDate = dueDate;
         this.returned = returned;
     }
 }

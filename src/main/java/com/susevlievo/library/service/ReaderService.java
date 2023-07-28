@@ -15,22 +15,22 @@ public class ReaderService {
         this.readerRepository = readerRepository;
     }
 
-    List<Reader> getAllReaders(){
+    public List<Reader> getAllReaders(){
         return readerRepository.findAll();
     }
 
-    Reader getReaderById(long id){
+    public  Reader getReaderById(long id){
         if(!readerRepository.findById(id).isPresent()){
             throw new ObjectDoesNotExistException("Reader with id"+ id + "does not exist");
         }
         return readerRepository.findById(id).get();
     }
 
-    Reader addReader(Reader reader){
+    public Reader addReader(Reader reader){
       return readerRepository.save(reader);
     }
 
-    void deleteReaderById(long id){
+    public void deleteReaderById(long id){
       readerRepository.deleteById(id);
     }
 

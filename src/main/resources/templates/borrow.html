@@ -6,6 +6,8 @@
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}">
     <script defer th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.bundle.min.js}"></script>
     <script defer src="/js/borrow.js"></script>
+    <link rel="stylesheet" href="/css/borrow.css">
+
 </head>
 <body>
 <div class="container mt-5">
@@ -16,7 +18,7 @@
                     <h4 class="mb-0">Заеми книга</h4>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form >
                         <div class="mb-3">
                             <label for="bookId" class="form-label">Инвентарен номер</label>
                             <input type="text" class="form-control" id="bookId" required>
@@ -30,7 +32,7 @@
                             <label for="dueDate" class="form-label">Краен срок</label>
                             <input type="date" class="form-control" id="dueDate"   th:value="${oneMonth}" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Заеми</button>
+                        <button type="button" id="submit" class="btn btn-primary">Заеми</button>
                     </form>
                 </div>
             </div>
