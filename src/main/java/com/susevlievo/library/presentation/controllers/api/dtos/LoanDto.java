@@ -77,4 +77,10 @@ public class LoanDto {
         this.dueDate = dueDate;
         this.returned = returned;
     }
+
+    public LoanDto(long id, Book book, Reader reader) {
+        this.id = id;
+        this.book = book;
+        this.reader = reader;
+    }
 }

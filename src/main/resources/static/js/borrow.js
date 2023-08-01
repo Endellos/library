@@ -1,6 +1,6 @@
 const bookIdInput = document.getElementById('bookId');
 const bookNameP = document.getElementById('bookName');
-
+const form  = document.getElementById("form");
 
 
 //GET bookName
@@ -87,8 +87,12 @@ function selectRow(row, id) {
 
 //submitting the form
 
+
 const submitBtn = document.getElementById("submit");
 const dueDate = document.getElementById("dueDate");
+const alertMessage = document.getElementById('alertMessage');
+
+
 submitBtn.addEventListener('click', async function(event){
     if (bookIdInput.value && selectedRowId && dueDate.value){
 
@@ -109,11 +113,25 @@ submitBtn.addEventListener('click', async function(event){
             body: JSON.stringify(data), // Convert the data to JSON and set it as the request body
         });
         if (response.ok){
+            showAlert('Успех! Книгата е заета успешно!', 'alert-success');
+            form.reset();
+            bookNameP.style.display="none";
+            readerTable.style.display="none";
+            selectedRowId = null;
+        }
+        else {showAlert('Грешка! Книгата вече е заета!', 'alert-danger');
+            form.reset();
+            bookNameP.style.display="none";
+            readerTable.style.display="none";
+            selectedRowId = null;
+        }
 
         }
-        }
+
         catch (error){
+            showAlert('Грешка! Книгата вече е заета!', 'alert-danger');
             console.log(error);
+
         }
 
     }
@@ -123,6 +141,17 @@ submitBtn.addEventListener('click', async function(event){
 )
 
 
+function showAlert(message, className) {
+    // Show the alert with the specified message and class
+    alertMessage.textContent = message;
+    alertMessage.classList.add(className);
+    alertMessage.style.display = 'block';
 
+    // Hide the alert after 5 seconds
+    setTimeout(() => {
+        alertMessage.style.display = 'none';
+        alertMessage.classList.remove(className);
+    }, 5000); // Adjust the duration as needed
+}
 
 

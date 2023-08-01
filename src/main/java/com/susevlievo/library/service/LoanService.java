@@ -38,4 +38,20 @@ public class LoanService {
     public   void returnLoan(long id){
         loanRepository.updateReturnedById(true, id);
     }
+
+    public Loan getActiveLoanByBookId(long bookId){
+
+    if(!loanRepository.findByBook_IdAndReturnedFalse(bookId).isPresent()){
+        throw new ObjectDoesNotExistException("No active loan on this book");
+    }
+
+     return    loanRepository.findByBook_IdAndReturnedFalse(bookId).get();
+    }
+
+    //true=book is not available
+    public boolean doesBookHaveActiveLoan(long bookId){
+        return loanRepository.existsByBook_IdAndReturnedFalse(bookId);
+    }
+
+
 }

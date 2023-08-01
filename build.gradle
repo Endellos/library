@@ -27,7 +27,9 @@ dependencies {
 
     implementation 'org.hibernate.orm:hibernate-community-dialects:6.2.7.Final'
     implementation 'org.webjars:bootstrap:5.2.3'
+    implementation 'org.webjars.npm:bootstrap-icons:1.10.5'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.1'
+
 
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

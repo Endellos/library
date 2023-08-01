@@ -83,13 +83,13 @@ VALUES (  'МАРИЯ', 'ПЕТРОВА', 'ИВАНОВА', '9в');
 --
 -- INSERT INTO loan ( book_id, reader_id, loan_date, due_date, returned)
 -- VALUES ( 1000, 2, PARSEDATETIME('2023-07-20', 'yyyy-MM-dd'), PARSEDATETIME('2023-08-03', 'yyyy-MM-dd'), 0);
---
--- INSERT INTO loan ( book_id, reader_id, loan_date, due_date, returned)
--- VALUES ( 3000, 1, PARSEDATETIME('2023-07-21', 'yyyy-MM-dd'), PARSEDATETIME('2023-08-10', 'yyyy-MM-dd'), 1);
---
--- INSERT INTO loan ( book_id, reader_id, loan_date, due_date, returned)
--- VALUES ( 2000, 3, PARSEDATETIME('2023-07-21', 'yyyy-MM-dd'), PARSEDATETIME('2023-08-05', 'yyyy-MM-dd'), 0);
---
+
+INSERT INTO loan ( book_id, reader_id, loan_date, due_date, returned)
+VALUES ( 3000, 1, PARSEDATETIME('2023-07-21', 'yyyy-MM-dd'), PARSEDATETIME('2023-08-10', 'yyyy-MM-dd'), 1);
+
+INSERT INTO loan ( book_id, reader_id, loan_date, due_date, returned)
+VALUES ( 2000, 3, PARSEDATETIME('2023-07-21', 'yyyy-MM-dd'), PARSEDATETIME('2023-08-05', 'yyyy-MM-dd'), 0);
+
 --
 --
 --

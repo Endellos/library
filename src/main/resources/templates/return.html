@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Върни книга</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}">
+    <script defer th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.bundle.min.js}"></script>
+    <link rel="stylesheet" href="webjars\bootstrap-icons\1.10.5\font\bootstrap-icons.min.css">
+
+    <script defer src="/js/return.js"></script>
+
 </head>
 <body>
+<div class="container mt-5">
+    <h2 class="mb-3">Върни книга</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="bookId" class="form-label">Инвентарен Номер</label>
+                <input id="bookId" type="text" class="form-control" >
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table ">
+                <thead>
+                <tr>
+                    <th scope="col">Книга</th>
+                    <th scope="col">Читател</th>
+                    <th scope="col">Върни</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Table rows will be dynamically added using JavaScript -->
+                </tbody>
+            </table>
+            <div id="alertMessage" class="alert" role="alert" style="display: none;"></div>
+
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

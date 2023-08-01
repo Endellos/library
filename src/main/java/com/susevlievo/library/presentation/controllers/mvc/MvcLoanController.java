@@ -17,4 +17,10 @@ public class MvcLoanController {
         model.addAttribute("oneMonth", LocalDate.now().plus(Period.ofMonths(1)));
         return "borrow";
     }
+
+
+    @GetMapping("/return")
+    String showReturn(){
+        return "return";
+    }
 }
