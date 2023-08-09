@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -20,6 +21,8 @@ public interface LoanRepository extends JpaRepository<Loan, Long> {
 
     //true=book is not available
     boolean existsByBook_IdAndReturnedFalse(long id);
+
+    List<Loan> findByReader_Id(long id);
 
 
 

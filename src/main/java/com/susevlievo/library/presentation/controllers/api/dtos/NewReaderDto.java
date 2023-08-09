@@ -1,7 +1,6 @@
 package com.susevlievo.library.presentation.controllers.api.dtos;
 
-public class ReaderDto {
-    long id;
+public class NewReaderDto {
     String firstName;
 
     String middleName;
@@ -10,30 +9,11 @@ public class ReaderDto {
 
     String klass;
 
-    public ReaderDto(long id, String firstName, String middleName, String lastName, String klass) {
-        this.id = id;
+    public NewReaderDto(String firstName, String middleName, String lastName, String klass) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
         this.klass = klass;
-    }
-
-    public ReaderDto(String firstName, String middleName, String lastName, String klass) {
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.klass = klass;
-    }
-
-    public ReaderDto() {
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getFirstName() {

@@ -54,4 +54,8 @@ public class LoanService {
     }
 
 
+    public List<Loan> getAllLoansByReaderId(long id){
+        return loanRepository.findByReader_Id(id);
+    }
+
 }

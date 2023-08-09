@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавяне на читател</title>
+  <thymeleaf th:replace="fragments :: thymeleaf"/>
+  <script defer src="/js/addReader.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="mb-0">Добавяне на читател</h4>
+        </div>
+        <div class="card-body">
+          <form id="addReaderForm">
+            <div class="mb-3">
+              <label for="firstName" class="form-label">Име</label>
+              <input type="text" class="form-control" id="firstName" required>
+            </div>
+            <div class="mb-3">
+              <label for="middleName" class="form-label">Презиме</label>
+              <input type="text" class="form-control" id="middleName">
+            </div>
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Фамилия</label>
+              <input type="text" class="form-control" id="lastName" required>
+            </div>
+            <div class="mb-3">
+              <label for="klass" class="form-label">Клас/Роля</label>
+              <input type="text" class="form-control" id="klass" required>
+            </div>
+            <button type="button" class="btn btn-primary" id="addBtn">Добави</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
