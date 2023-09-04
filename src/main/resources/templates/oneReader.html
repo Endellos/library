@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Детайли за  читател</title>
+    <thymeleaf th:replace="fragments :: thymeleaf"/>
+    <!-- Add your CSS styles here -->
 </head>
 <body>
+<nav th:replace="fragments :: nav"></nav>
+
+<div class="container">
+    <h1>Детайли за читател</h1>
+    <div id="readerDetails">
+        <!-- Reader information will be dynamically populated here -->
+    </div>
+    <h2>Заеми</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Книга</th>
+            <th>Дата на заемане</th>
+            <th>Краен срок</th>
+            <th>Върната</th>
+        </tr>
+        </thead>
+        <tbody id="loanList">
+        <!-- Loan information will be dynamically populated here -->
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>

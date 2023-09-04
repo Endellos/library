@@ -27,15 +27,15 @@ public class ApiReaderController {
     ResponseEntity<List<ReaderDto>> getAllReaders(){
         List<ReaderDto> readersDtos = readerService.getAllReaders().stream() .map(reader -> modelMapper.map(reader, ReaderDto.class))
                  .collect(Collectors.toList());
-        return new ResponseEntity(readersDtos,HttpStatus.OK);
+        return new ResponseEntity<>(readersDtos,HttpStatus.OK);
     }
 
     @GetMapping
     ResponseEntity<List<ReaderDto>> getReadersByFullNameContaining(@RequestParam("name") String name){
        var readerList = readerService.findReadersByFullName(name);
-//       if (readerList.isEmpty()){
-//           return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//       }
+       if (readerList.isEmpty()){
+           return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+       }
         return new ResponseEntity<>(
                 readerList.stream().map(reader -> new ReaderDto(reader.getId(), reader.getFirstName(),
                         reader.getMiddleName(), reader.getLastName(), reader.getKlass()

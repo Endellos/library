@@ -31,7 +31,7 @@ public class MvcReaderController {
     }
 
     @GetMapping("/{id}")
-    String showOneReaders(@PathVariable long id){
+    String showOneReader(@PathVariable long id){
 
         return "oneReader";
     }
